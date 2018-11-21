@@ -20,6 +20,9 @@ app = Flask(__name__)
 
 
 @app.route('/stream')
+
+img = np.zeros((512,512,3), np.uint8)
+
 def stream():
     return Response(gen(),
                     mimetype='multipart/x-mixed-replace; boundary=frame')
@@ -55,11 +58,11 @@ def decode(frame):
 def draw_positions(frame, decoded_objs):
     for decoded_obj in decoded_objs:
         left, top, width, height = decoded_obj.rect
-       ''' frame = cv2.rectangle(frame,
+        frame = cv2.rectangle(frame,
                               (left, top),
                               (left + width, height + top),
-                              (255, 0, 0), 2)'''
-        frame= cv2.line(img,(0,0),(511,511),(255,0,0),5)
+                              (255, 0, 0), 2)
+       ''' frame= cv2.line(img,(0,0),(511,511),(255,0,0),5)'''
         
 if __name__ == '__main__':
     app.run(host="0.0.0.0", debug=False, threaded=True)
