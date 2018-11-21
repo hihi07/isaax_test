@@ -55,12 +55,11 @@ def decode(frame):
 def draw_positions(frame, decoded_objs):
     for decoded_obj in decoded_objs:
         left, top, width, height = decoded_obj.rect
-        frame = cv2.rectangle(frame,
+       ''' frame = cv2.rectangle(frame,
                               (left, top),
                               (left + width, height + top),
-                              (255, 0, 0), 2)
-font = cv2.FONT_HERSHEY_SIMPLEX
-cv2.putText(frame,'OpenCV',(10,500), font, 4,(255,255,255),2,cv2.LINE_AA)
+                              (255, 0, 0), 2)'''
+        frame= cv2.line(img,(0,0),(511,511),(255,0,0),5)
         
 if __name__ == '__main__':
     app.run(host="0.0.0.0", debug=False, threaded=True)
