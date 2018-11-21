@@ -21,7 +21,7 @@ app = Flask(__name__)
 
 @app.route('/stream')
 
-img = np.zeros((512,512,3), np.uint8)
+#img = np.zeros((512,512,3), np.uint8)
 
 def stream():
     return Response(gen(),
