@@ -60,7 +60,6 @@ def draw_positions(frame, decoded_objs):
                               (left + width, height + top),
                               (255, 0, 0), 2)
 
-img = cv2.rectangle(img,(384,0),(510,128),(0,255,0),3)
         
 if __name__ == '__main__':
     app.run(host="0.0.0.0", debug=False, threaded=True)
