@@ -58,6 +58,6 @@ def draw_positions(frame, decoded_objs):
         frame = cv2.rectangle(frame,
                               (left, top),
                               (left + width, height + top),
-                              (255, 0, 0), 2)
+                              (0, 255, 0), 2)
 if __name__ == '__main__':
     app.run(host="0.0.0.0", debug=False, threaded=True)
